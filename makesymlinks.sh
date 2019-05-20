@@ -30,6 +30,8 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
+git clone https://github.com/gmarik/Vundle.vim.git vim/bundle/Vundle.vim
+
 vim -c PluginInstall
 
 cd vim/bundle/YouCompleteMe
