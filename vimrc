@@ -54,3 +54,9 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 colorscheme nord
+
+match ErrorMsg '\%>80v.\+'
+set colorcolumn=80
+
+set ruler
+set number
