@@ -34,7 +34,10 @@ au BufNewFile,BufRead *.py
     \ set textwidth=79  |
     \ set expandtab     |
     \ set autoindent    |
-    \ set fileformat=unix
+    \ set fileformat=unix |
+    \ set colorcolumn=80 |
+    \ match ErrorMsg '\%>80v.\+'
+
 
 set encoding=utf-8
 
@@ -61,9 +64,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 colorscheme nord
-
-match ErrorMsg '\%>80v.\+'
-set colorcolumn=80
 
 set ruler
 set number
