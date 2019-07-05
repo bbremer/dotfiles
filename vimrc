@@ -218,7 +218,7 @@ filetype plugin indent on    " required
 " }}}
 
 " Change vim theme to nord
-colorscheme nord
+silent! colorscheme nord
 
 " Filetype specific handling {{{
 " only do this part when compiled with support for autocommands
