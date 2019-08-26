@@ -230,7 +230,7 @@ if has("autocmd")
         " earlier, as it is important)
         autocmd filetype python setlocal textwidth=78
         autocmd filetype python set colorcolumn=80
-	autocmd filetype python match ErrorMsg '\%>80v.\+'
+	    autocmd filetype python match ErrorMsg '\%>80v.\+'
 
 	" But disable autowrapping as it is super annoying
         autocmd filetype python setlocal formatoptions-=t
@@ -239,8 +239,13 @@ if has("autocmd")
         autocmd filetype python nnoremap <leader>s mX:%!isort -<cr>`X:redraw!<cr>
 
 	" Change python folding to follow indents
-	autocmd filetype python set foldmethod=indent
+	    autocmd filetype python set foldmethod=indent
     augroup end " }}}
+
+    augroup readme_files "{{{
+        au!
+        autocmd BufRead,BufNewFile *.md,*.txt setlocal textwidth=80
+    augroup end "}}}
 endif
 
 
