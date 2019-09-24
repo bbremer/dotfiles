@@ -202,9 +202,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
-if v:version > 703
-    Plugin 'Valloric/YouCompleteMe'
-endif
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'vim-syntastic/syntastic'
@@ -216,6 +214,8 @@ Plugin 'arcticicestudio/nord-vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " }}}
+"
+let g:syntastic_python_checkers = ['python', 'flake8']
 
 " Change vim theme to nord
 silent! colorscheme nord
