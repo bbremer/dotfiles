@@ -215,7 +215,7 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 " }}}
 "
-let g:syntastic_python_checkers = ['python', 'flake8']
+let g:syntastic_python_checkers = ['python3', 'flake8']
 
 " Change vim theme to nord
 silent! colorscheme nord
