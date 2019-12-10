@@ -24,6 +24,7 @@ let mapleader=","
 let maplocalleader="\\"
 
 " Editing behaviour {{{
+set showcmd                     " show cmd being typed
 set showmode                    " always show what mode we're currently editing in
 set nowrap                      " don't wrap lines
 set tabstop=4                   " a tab is four spaces
