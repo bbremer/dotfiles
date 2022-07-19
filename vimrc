@@ -73,6 +73,7 @@ set virtualedit=all             " allow the cursor to go in to "invalid" places
 set mouse=a                     " enable using the mouse if terminal emulator
                                 "    supports it (xterm does)
 set noerrorbells                " disable beep on errors
+set termguicolors               " needed for nord
 silent! colorscheme nord        " change vim theme to nord
 
 
