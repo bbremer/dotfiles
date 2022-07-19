@@ -47,5 +47,5 @@ if [ -d $ycmdir ]
 then
     echo "Installing youcompleteme"
     cd $ycmdir
-    python3 install.py --clang-completer --rust-completer --ts-completer
+    /usr/local/bin/python3 install.py --clang-completer --rust-completer --js-completer
 fi
