@@ -94,33 +94,4 @@ set encoding=utf-8
 
 " command mapping
 inoremap jk <ESC>
-
-
 " }}}
-
-
-" TODO: After this.
-" Filetype specific handling {{{
-" only do this part when compiled with support for autocommands
-if has("autocmd")
-    augroup python_files "{{{
-        au!
-
-	" PEP8 compliance (set 1 tab = 4 chars explicitly, even if set
-        " earlier, as it is important)
-        autocmd filetype python setlocal textwidth=78
-        autocmd filetype python set colorcolumn=80
-	    autocmd filetype python match ErrorMsg '\%>80v.\+'
-
-	" But disable autowrapping as it is super annoying
-        autocmd filetype python setlocal formatoptions-=t
-
-	" Change python folding to follow indents
-	    autocmd filetype python set foldmethod=indent
-    augroup end " }}}
-
-    augroup readme_files "{{{
-        au!
-        autocmd BufRead,BufNewFile *.md,*.txt setlocal textwidth=80
-    augroup end "}}}
-endif
