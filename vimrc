@@ -10,11 +10,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" macOS is python2 default
-if has('macunix')
-  let g:ycm_path_to_python_interpreter = '/usr/local/bin/python3'
-endif
-
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
