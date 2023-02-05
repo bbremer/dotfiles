@@ -47,6 +47,5 @@ if [ -d $ycmdir ]
 then
     echo "Installing youcompleteme"
     cd $ycmdir
-    # TODO: Assert python is Python 3.
-    python3 install.py --clang-completer --rust-completer --js-completer
+    python3 install.py --clang-completer --rust-completer --js-completer --go-completer
 fi
