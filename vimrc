@@ -31,11 +31,7 @@ filetype plugin indent on    " required
 
 " Editing behaviour {{{
 " tabs/indenting
-" TODO: Language specific.
-set tabstop=4                   " a tab is four spaces
-set softtabstop=4               " when hitting <BS>, pretend like a tab is removed, even if spaces
 set expandtab                   " expand tabs by default (overloadable per file type later)
-set shiftwidth=4                " number of spaces to use for indenting with '<<' and '>>'.
 set shiftround                  " round to multiple of shiftwidth when indenting with '<' and '>'
 set autoindent                  " new lines inherit indentation of previous lines.
 set copyindent                  " copy the previous indentation on autoindenting
