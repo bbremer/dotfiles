@@ -39,7 +39,7 @@ else
     git clone git@github.com:VundleVim/Vundle.vim.git vim/bundle/Vundle.vim
 fi
 
-vim +PluginInstall +qall
+vim +PluginInstall! +qall
 
 echo Installing YouCompleteMe.
 ycmdir=vim/bundle/YouCompleteMe
