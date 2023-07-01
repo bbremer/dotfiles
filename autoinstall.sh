@@ -49,3 +49,18 @@ then
     cd $ycmdir
     python3 install.py --clang-completer --rust-completer --js-completer --go-completer
 fi
+
+case $(uname -s) in
+    Linux*)  OS=Linux;;
+    Darwin*) OS=Darwin;;
+    *)       echo "OS not known"; exit 1
+esac
+
+if [ "$OS" = "Linux" ]
+then
+    echo "TODO: Install work/rest on linux."
+elif [ "$OS" = "Darwin" ]
+then
+    sudo ln -sf $PWD/mac-work.zsh /usr/local/bin/work
+    sudo ln -sf $PWD/mac-rest.zsh /usr/local/bin/rest
+fi
