@@ -2,7 +2,7 @@ if [[ $# -gt 0 ]]
 then
     TIME=$1
 else
-    TIME=20m
+    TIME=25m
 fi
 
 echo $TIME
