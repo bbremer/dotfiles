@@ -18,12 +18,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " plugins on GitHub repo
-Plugin 'ycm-core/YouCompleteMe'
 Plugin 'dense-analysis/ale'
-Plugin 'nvie/vim-flake8'
 Plugin 'arcticicestudio/nord-vim'
-Plugin 'rust-lang/rust.vim'
-Plugin 'fatih/vim-go'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
