@@ -3,53 +3,52 @@
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 
 # Variables.
-dir=~/dotfiles                    # dotfiles directory
-olddir=~/dotfiles_old             # old dotfiles backup directory
-files="vimrc vim"    # list of files/directories to symlink in homedir
+dir=~/dotfiles        # dotfiles directory
+olddir=~/dotfiles_old # old dotfiles backup directory
+files="vimrc vim"     # list of files/directories to symlink in homedir
 
 # create dotfiles_old in homedir
-if [ -d $olddir ]
-then
-    echo "$olddir already exists, removing."
-    rm -rf $olddir
+if [ -d $olddir ]; then
+	echo "$olddir already exists, removing."
+	rm -rf $olddir
 fi
 mkdir -p $olddir
 
 # change to the dotfiles directory
 cd $dir
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
+# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 for file in $files; do
-    mv ~/.$file ~/dotfiles_old/
-    ln -s $dir/$file ~/.$file
+	mv ~/.$file ~/dotfiles_old/
+	ln -s $dir/$file ~/.$file
 done
 
-if [ -d vim/bundle/Vundle.vim ]
-then
-    echo "Pulling Vundle: "
-    cd vim/bundle/Vundle.vim
-    git pull
-    cd ../../..
+if [ -d vim/bundle/Vundle.vim ]; then
+	echo "Pulling Vundle: "
+	cd vim/bundle/Vundle.vim
+	git pull
+	cd ../../..
 else
-    echo "Cloning Vundle"
-    git clone git@github.com:VundleVim/Vundle.vim.git vim/bundle/Vundle.vim
+	echo "Cloning Vundle"
+	git clone git@github.com:VundleVim/Vundle.vim.git vim/bundle/Vundle.vim
 fi
 
 vim +PluginInstall! +qall
 
 # Install pomodoro
 case $(uname -s) in
-    Linux*)  OS=Linux;;
-    Darwin*) OS=Darwin;;
-    *)       echo "OS not known"; exit 1
+Linux*) OS=Linux ;;
+Darwin*) OS=Darwin ;;
+*)
+	echo "OS not known"
+	exit 1
+	;;
 esac
-if [ "$OS" = "Linux" ]
-then
-    echo "TODO: Install work/rest on linux."
-elif [ "$OS" = "Darwin" ]
-then
-    sudo ln -sf $PWD/mac-work.zsh /usr/local/bin/work
-    sudo ln -sf $PWD/mac-rest.zsh /usr/local/bin/rest
+if [ "$OS" = "Linux" ]; then
+	echo "TODO: Install work/rest on linux."
+elif [ "$OS" = "Darwin" ]; then
+	sudo ln -sf $PWD/mac-work.zsh /usr/local/bin/work
+	sudo ln -sf $PWD/mac-rest.zsh /usr/local/bin/rest
 fi
 
 echo
@@ -74,3 +73,8 @@ printf "\traco fmt "$(racket -e "(require setup/getinfo) (require pkg/lib) ((get
 printf "\nbash\n"
 printf "\tbash-language-server $(bash-language-server -v)\n"
 printf "\tshfmt $(shfmt --version)\n"
+
+printf "\njavascript/typescript\n"
+printf "\teslint $(eslint -v)\n"
+printf "\tbiome $(biome --version)\n"
+# TODO: css, html, markdown, JSON, LaTeX, R, rst, sql, terraform, vimscript, yaml, vue, react
