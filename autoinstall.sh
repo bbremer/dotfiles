@@ -70,3 +70,7 @@ printf "\t$(gopls version | tr '\n' ' ')\n"
 printf "\nracket\n"
 printf "\tracket-langserver "$(racket -e "(require setup/getinfo) (require pkg/lib) ((get-info/full (pkg-directory \"racket-langserver\")) 'version)")"\n"
 printf "\traco fmt "$(racket -e "(require setup/getinfo) (require pkg/lib) ((get-info/full (pkg-directory \"fmt\")) 'version)")"\n"
+
+printf "\nbash\n"
+printf "\tbash-language-server $(bash-language-server -v)\n"
+printf "\tshfmt $(shfmt --version)\n"
