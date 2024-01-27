@@ -26,7 +26,7 @@ done
 
 if [ -d vim/bundle/Vundle.vim ]
 then
-    echo -n "Pulling Vundle: "
+    echo "Pulling Vundle: "
     cd vim/bundle/Vundle.vim
     git pull
     cd ../../..
@@ -63,3 +63,6 @@ printf "\t$(black --version | tr '\n' ' ')\n"
 printf "\nrust\n"
 printf "\t$(rust-analyzer --version)\n"
 printf "\t$(rustfmt --version)\n"
+
+printf "\ngo\n"
+printf "\t$(gopls version | tr '\n' ' ')\n"
