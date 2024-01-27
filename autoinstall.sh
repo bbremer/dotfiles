@@ -53,8 +53,13 @@ then
 fi
 
 echo
-echo "Python dev tools versions:"
-echo -n "flake8 "
-flake8 --version
-mypy -V
-black --version
+echo "dev tools versions"
+
+printf "\npython\n"
+printf "\tflake8 $(flake8 --version)\n"
+printf "\t$(mypy -V)\n"
+printf "\t$(black --version | tr '\n' ' ')\n"
+
+printf "\nrust\n"
+printf "\t$(rust-analyzer --version)\n"
+printf "\t$(rustfmt --version)\n"
